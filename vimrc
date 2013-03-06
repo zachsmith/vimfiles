@@ -242,6 +242,19 @@ imap <buffer> <F4> <Plug>(xmpfilter-mark)
 
 :runtime macros/matchit.vim
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gitgutter.vim
+" Shows if line has changed, using git diff
+"
+" https://github.com/airblade/vim-gitgutter
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'airblade/vim-gitgutter'
+
+map <leader>gg :GitGutterLineHighlightsToggle<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 filetype plugin indent on
 
 " Backups and swap
