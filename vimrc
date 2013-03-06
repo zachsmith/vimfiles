@@ -31,6 +31,8 @@ map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 map <leader>ga :Git add --all<cr>:Gcommit<cr>
 map <leader>gb :Gblame<cr>
+map <leader>gr :Gread<cr>
+map <leader>gw :Gwrite<cr>
 
 " Use j/k in status
 function! BufReadIndex()
