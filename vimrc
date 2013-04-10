@@ -254,6 +254,19 @@ Bundle 'airblade/vim-gitgutter'
 map <leader>gg :GitGutterLineHighlightsToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTREE
+" The NERD tree allows you to explore your filesystem and to open files and directories.
+"
+" https://github.com/scrooloose/nerdtree
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'scrooloose/nerdtree'
+
+map <leader>nt :NERDTreeToggle<cr>
+map <leader>nf :NERDTreeFind<cr>
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd BufEnter * silent! if bufname('%') !~# 'NERD_tree_' | cd %:p:h | NERDTreeCWD | wincmd p | endif
 
 filetype plugin indent on
 
@@ -303,7 +316,16 @@ set laststatus=2
 set t_Co=256
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
 let g:CSApprox_eterm = 1
-color molokai
+
+" Colors
+Bundle 'altercation/vim-colors-solarized'
+
+"color molokai
+
+syntax enable
+set background=dark
+colorscheme solarized
+
 
 " Show (partial) command in the status line
 set showcmd
