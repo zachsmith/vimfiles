@@ -328,7 +328,6 @@ colorscheme solarized
 
 map <leader>/ :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-
 " Show (partial) command in the status line
 set showcmd
 
