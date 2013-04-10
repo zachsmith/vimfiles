@@ -326,6 +326,8 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+map / :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
 
 " Show (partial) command in the status line
 set showcmd
