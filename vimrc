@@ -265,8 +265,22 @@ Bundle 'scrooloose/nerdtree'
 map <leader>nt :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFind<cr>
 
+" make vim quit if nerdtree is the only buffer left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-" autocmd BufEnter * silent! if bufname('%') !~# 'NERD_tree_' | cd %:p:h | NERDTreeCWD | wincmd p | endif
+
+""TODO: Figure out why NT is still complaining about this 
+let NERDTreeIgnore = ['\.zeus.sock$','\~$']
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lusty Explorer provides nice buffer list, simple navigation and smart
+" greping
+"
+" https://github.com/sjbach/lusty
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'sjbach/lusty'
+
 
 filetype plugin indent on
 
@@ -278,7 +292,7 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
 syntax on
-set nohidden
+set hidden
 set history=10000
 set number
 set ruler
@@ -317,10 +331,10 @@ set t_Co=256
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
 let g:CSApprox_eterm = 1
 
+"""""""""""""""""""""""""""""""""""
 " Colors
+"""""""""""""""""""""""""""""""""""
 Bundle 'altercation/vim-colors-solarized'
-
-"color molokai
 
 syntax enable
 set background=dark
