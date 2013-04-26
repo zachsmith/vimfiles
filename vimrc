@@ -33,6 +33,7 @@ map <leader>ga :Git add --all<cr>:Gcommit<cr>
 map <leader>gb :Gblame<cr>
 map <leader>gr :Gread<cr>
 map <leader>gw :Gwrite<cr>
+map <leader>gd :Gdiff<cr>
 
 " Use j/k in status
 function! BufReadIndex()
@@ -271,7 +272,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 ""TODO: Figure out why NT is still complaining about this 
 let NERDTreeIgnore = ['\.zeus.sock$','\~$']
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lusty Explorer provides nice buffer list, simple navigation and smart
 " greping
@@ -280,6 +280,20 @@ let NERDTreeIgnore = ['\.zeus.sock$','\~$']
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'sjbach/lusty'
+
+map <leader>ls :LustyBufferExplorer <cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" dealing with vim tabs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>tn :tabn <cr>
+map <leader>tp :tabp <cr>
+map <leader>tf :tabfirst <cr>
+map <leader>tl :tablast <cr>
+map <leader>tls :tabs <cr>
+map <leader>tm0 :tabm 0 <cr>
+map <leader>tm1 :tabm <cr>
 
 
 filetype plugin indent on
@@ -308,6 +322,7 @@ set expandtab
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
+
 set hlsearch
 set incsearch
 set ignorecase
@@ -594,3 +609,24 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+endfunction
+
+nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
+nmap <silent> <leader>pw :call DoWindowSwap()<CR>
