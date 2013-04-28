@@ -1,6 +1,8 @@
 set nocompatible
 let mapleader = ","
 
+nmap <SPACE> ,
+
 " Vundle
 filetype on
 filetype off
@@ -484,10 +486,10 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Left> :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up> :echo "no!"<cr>
-map <Down> :echo "no!"<cr>
+"map <Left> :echo "no!"<cr>
+"map <Right> :echo "no!"<cr>
+"map <Up> :echo "no!"<cr>
+"map <Down> :echo "no!"<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tmux stuff
@@ -592,27 +594,18 @@ if exists('$ITERM_PROFILE') || exists('$TMUX')
   cmap <f29> <nop>
 end
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Persistent undo
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set undofile
-set undodir=$HOME/.vim/undo
-
-set undolevels=1000
-set undoreload=10000
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LAST SECTION
-" Include user's local vim config
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
-
 function! MarkWindowSwap()
     let g:markedWinNum = winnr()
 endfunction
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Function for swapping buffers without changing the split layout.
+"
+" ,mw to "mark the window you want to move"
+" navigate to split you want to move the marked window to
+" ,pw to "paste the window you marked" - the buffer in the current split will
+" be moved to the split you marked from 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! DoWindowSwap()
     "Mark destination
     let curNum = winnr()
@@ -630,3 +623,21 @@ endfunction
 
 nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
 nmap <silent> <leader>pw :call DoWindowSwap()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Persistent undo
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set undofile
+set undodir=$HOME/.vim/undo
+
+set undolevels=1000
+set undoreload=10000
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LAST SECTION
+" Include user's local vim config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
