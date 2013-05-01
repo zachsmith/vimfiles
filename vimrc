@@ -284,19 +284,23 @@ let NERDTreeIgnore = ['\.zeus.sock$','\~$']
 Bundle 'sjbach/lusty'
 
 map <leader>ls :LustyBufferExplorer <cr>
+map <leader>ns :LustyBufferExplorer <cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " dealing with vim tabs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <leader>tn :tabn <cr>
+map <leader>tn :tabNext <cr>
 map <leader>tp :tabp <cr>
 map <leader>tf :tabfirst <cr>
 map <leader>tl :tablast <cr>
 map <leader>tls :tabs <cr>
+map <leader>tns :tabs <cr>
 map <leader>tm0 :tabm 0 <cr>
 map <leader>tm1 :tabm <cr>
-
+map <leader>tw :tabclose <cr>
+map <leader>tt :tabnew <cr>
+map <C-t>  :tabnew<cr>
 
 filetype plugin indent on
 
