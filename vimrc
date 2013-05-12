@@ -287,6 +287,8 @@ Bundle 'sjbach/lusty'
 map <leader>ls :LustyBufferExplorer <cr>
 map <leader>ns :LustyBufferExplorer <cr>
 
+Bundle 'Lokaltog/vim-easymotion'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " dealing with vim tabs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
