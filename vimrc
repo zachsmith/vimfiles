@@ -605,6 +605,15 @@ function! MarkWindowSwap()
     let g:markedWinNum = winnr()
 endfunction
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Split shortcuts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>s :split<cr>
+map <leader>S :split<space>
+map <leader>v :vsplit<cr>
+map <leader>V :vsplit<space>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Function for swapping buffers without changing the split layout.
 "
