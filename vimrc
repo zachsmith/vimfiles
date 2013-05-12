@@ -614,6 +614,10 @@ map <leader>S :split<space>
 map <leader>v :vsplit<cr>
 map <leader>V :vsplit<space>
 
+
+" clear highlight
+map <leader>x :noh<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Function for swapping buffers without changing the split layout.
 "
