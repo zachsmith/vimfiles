@@ -162,6 +162,7 @@ let g:vroom_write_all = 1
 let g:vroom_use_bundle_exec = 0
 let g:vroom_spec_command = '`[ -e .zeus.sock ] && echo zeus` rspec '
 let g:vroom_cucumber_path = '`[ -e .zeus.sock ] && echo zeus` cucumber -r features '
+let g:vroom_use_zeus = 0
 map <leader>t :VroomRunTestFile<cr>
 map <leader>T :VroomRunNearestTest<cr>
 
