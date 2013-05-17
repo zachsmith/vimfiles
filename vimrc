@@ -37,6 +37,16 @@ map <leader>gr :Gread<cr>
 map <leader>gw :Gwrite<cr>
 map <leader>gd :Gdiff<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Gist Vim
+"
+" Create or edit gists on github
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+let g:gist_open_browser_after_post = 1
+let g:gist_post_private = 1
+ 
 " Use j/k in status
 function! BufReadIndex()
   setlocal cursorline
