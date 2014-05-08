@@ -158,6 +158,10 @@ Bundle 'nelstrom/vim-textobj-rubyblock'
 " Tab to indent or autocomplete depending on context
 Bundle 'ervandew/supertab'
 
+" dash support
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vroom
 "
