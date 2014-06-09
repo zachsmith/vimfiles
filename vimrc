@@ -19,7 +19,7 @@ endif
 
 " Bundler for vim, use :BundleInstall to install these bundles and
 " :BundleUpdate to update all of them
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fugitive
@@ -27,7 +27,7 @@ Bundle 'gmarik/vundle'
 " Git in vim, use ,gs for git status then - to stage then C to commit
 " check :help Gstatus for more keys
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
@@ -42,8 +42,8 @@ map <leader>gd :Gdiff<cr>
 "
 " Create or edit gists on github
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 let g:gist_open_browser_after_post = 1
 let g:gist_post_private = 1
  
@@ -72,13 +72,13 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Surrond stuff with things. ysiw" surrounds a word with quotes
 " cs"' changes " to '
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " Lets you use . to repeat some things like vim-surround
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 
 " Comment with gc (takes a motion) or ^_^_
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ctrl-P
@@ -86,7 +86,7 @@ Bundle 'tomtom/tcomment_vim'
 " Open a file (like cmd-t but better). Use ,f or ,j(something, see bindings
 " below)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " Don't manage working directory
 let g:ctrlp_working_path_mode = 0
@@ -109,7 +109,7 @@ map <leader><leader>f :let g:ctrlp_default_input = 0<cr>:CtrlPClearCache<cr>:Ctr
 "
 " Adds :Ack complete w/ quick fix
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 
 map <leader>a :Ack!<space>
 map <leader>A :Ack! <C-R><C-W><CR>
@@ -121,46 +121,49 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 
 " Updates your status line to show what selector you're in in sass files
-Bundle 'aaronjensen/vim-sass-status'
+Plugin 'aaronjensen/vim-sass-status'
 
 " Kills a buffer without closing a split, use ,w . Used in conjunction 
 " with command-w, below...
-Bundle 'vim-scripts/bufkill.vim'
+Plugin 'vim-scripts/bufkill.vim'
 
 " Smarts around killing buffers, will close the split if it's the last buffer in
 " it, and close vim if it's the last buffer/split. Use ,w
-Bundle 'nathanaelkane/vim-command-w'
+Plugin 'nathanaelkane/vim-command-w'
 
 " Shows syntax errors on several types of files
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Automatically add end at the end of ruby and vim blocks
-Bundle 'tpope/vim-endwise'
+Plugin 'tpope/vim-endwise'
 
 " Add a few paired mappings, in particular [q and ]q to navigate the quickfix
 " list
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
 " Handy file manipulations. Favorites are :Remove and :Rename
-Bundle 'tpope/vim-eunuch'
+Plugin 'tpope/vim-eunuch'
 
 " Allows custom textobj motions (like i" or a[)
-Bundle 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-user'
 
 " Motion based on indent level. Useful in coffeescript, try vai to select
 " everything on the current indent level. vii is similar, but will not ignore
 " blank lines
-Bundle 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-indent'
 
 " Motion based on ruby blocks. vir selects in a ruby block
-Bundle 'nelstrom/vim-textobj-rubyblock'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Tab to indent or autocomplete depending on context
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
 " dash support
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+
+" TaskPaper
+Plugin 'davidoc/taskpaper.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vroom
@@ -169,7 +172,7 @@ Bundle 'rizzatti/dash.vim'
 " with ,T also remembers last run test so you can hit it again on non-test
 " files to run the last run test
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'skalnik/vim-vroom'
+Plugin 'skalnik/vim-vroom'
 
 let g:vroom_map_keys = 0
 let g:vroom_write_all = 1
@@ -181,65 +184,68 @@ map <leader>t :VroomRunTestFile<cr>
 map <leader>T :VroomRunNearestTest<cr>
 
 " Vim coffeescript runtime files
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
 " Stuff for cucumber, try out ^] on a step in a feature to go to step
 " definition
-Bundle 'tpope/vim-cucumber'
+Plugin 'tpope/vim-cucumber'
 
 " Updated ruby syntax and such
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 
 " Some syntax highlighthing for rails and :Rextract to extract partials
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 
 " Improved javascript indentation
-Bundle 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 
 " Vim Git runtime files
-Bundle 'tpope/vim-git'
+Plugin 'tpope/vim-git'
 
 " Vim runtime files for Haml, Sass, and SCSS
-Bundle 'tpope/vim-haml'
+Plugin 'tpope/vim-haml'
 
-" Vim Markdown runtime files
-Bundle 'tpope/vim-markdown'
+" Tpopes helpful Vim markdown
+Plugin 'tpope/vim-markdown', {'name': 'tpope-markdown'}
+
+" Vim markdown
+Plugin 'plasticboy/vim-markdown'
 
 " vim handlebars runtime files
-Bundle 'nono/vim-handlebars'
+Plugin 'nono/vim-handlebars'
 
 " Syntax for jquery keywords and selectors
-Bundle 'itspriddle/vim-jquery'
+Plugin 'itspriddle/vim-jquery'
 "
 " Vim syntax for jst files
-Bundle 'jeyb/vim-jst'
+Plugin 'jeyb/vim-jst'
 
 " Syntax for nginx
-Bundle 'mutewinter/nginx.vim'
+Plugin 'mutewinter/nginx.vim'
 
 " Makes css colors show up as their actual colors, works better with CSApprox
 " or macvim
-Bundle 'ap/vim-css-color'
+Plugin 'ap/vim-css-color'
 
 " My favorite dark color scheme
-Bundle 'mrtazz/molokai.vim'
+Plugin 'mrtazz/molokai.vim'
 
 " Decent light color scheme
-Bundle 'nelstrom/vim-mac-classic-theme'
+Plugin 'nelstrom/vim-mac-classic-theme'
 
 " vim powerline -  The ultimate vim statusline utility
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-powerline'
 
 " makes the command line behave like emacs
-Bundle 'houtsnip/vim-emacscommandline'
+Plugin 'houtsnip/vim-emacscommandline'
 
 " Adds gr command to replace text (takes a motion)
 " similar to v(motion)p but also cuts text into black hole register so it is
 " repeatable. So really it's similar to v(motion)"_p
-Bundle 'ReplaceWithRegister'
+Plugin 'ReplaceWithRegister'
 
 " Just open a YAML file and hit `⌘r` or `<leader>r`. Again to go back.
-Bundle 'henrik/vim-yaml-flattener'
+Plugin 'henrik/vim-yaml-flattener'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " xmpfilter
@@ -248,7 +254,7 @@ Bundle 'henrik/vim-yaml-flattener'
 " after any #=>. You can press F4 to insert a #=> on the current line and f5
 " runs the entire buffer.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 't9md/vim-ruby-xmpfilter'
+Plugin 't9md/vim-ruby-xmpfilter'
 
 nmap <buffer> <F5> <Plug>(xmpfilter-run)
 xmap <buffer> <F5> <Plug>(xmpfilter-run)
@@ -267,7 +273,7 @@ imap <buffer> <F4> <Plug>(xmpfilter-mark)
 " https://github.com/airblade/vim-gitgutter
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 map <leader>gg :GitGutterLineHighlightsToggle<cr>
 
@@ -278,7 +284,7 @@ map <leader>gg :GitGutterLineHighlightsToggle<cr>
 " https://github.com/scrooloose/nerdtree
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 map <leader>nt :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFind<cr>
@@ -296,12 +302,12 @@ let NERDTreeIgnore = ['\.zeus.sock$','\~$']
 " https://github.com/sjbach/lusty
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'sjbach/lusty'
+Plugin 'sjbach/lusty'
 
 map <leader>ls :LustyBufferExplorer <cr>
 map <leader>ns :LustyBufferExplorer <cr>
 
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " dealing with vim tabs
@@ -372,7 +378,7 @@ let g:CSApprox_eterm = 1
 """""""""""""""""""""""""""""""""""
 " Colors
 """""""""""""""""""""""""""""""""""
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 syntax enable
 set background=dark
@@ -428,7 +434,7 @@ cmap %% <C-R>=expand("%:p:h") . "/" <CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages = {'level': 'warning'}
 
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
@@ -667,6 +673,13 @@ set undodir=$HOME/.vim/undo
 set undolevels=1000
 set undoreload=10000
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Persistent undo
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <leader>t :!thyme -dp<cr>
+nmap <leader>b :!thyme -db<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LAST SECTION
 " Include user's local vim config
@@ -674,4 +687,3 @@ set undoreload=10000
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
