@@ -120,8 +120,8 @@ map <leader>A :Ack! <C-R><C-W><CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 
-" Updates your status line to show what selector you're in in sass files
-Plugin 'aaronjensen/vim-sass-status'
+" " Updates your status line to show what selector you're in in sass files
+" Plugin 'aaronjensen/vim-sass-status'
 
 " Kills a buffer without closing a split, use ,w . Used in conjunction 
 " with command-w, below...
@@ -161,9 +161,6 @@ Plugin 'ervandew/supertab'
 " dash support
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rizzatti/dash.vim'
-
-" TaskPaper
-Plugin 'davidoc/taskpaper.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vroom
@@ -206,10 +203,11 @@ Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-haml'
 
 " Tpopes helpful Vim markdown
-Plugin 'tpope/vim-markdown', {'name': 'tpope-markdown'}
+" Plugin 'tpope/vim-markdown', {'name': 'tpope-markdown'}
 
 " Vim markdown
 Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
 
 " vim handlebars runtime files
 Plugin 'nono/vim-handlebars'
@@ -232,9 +230,6 @@ Plugin 'mrtazz/molokai.vim'
 
 " Decent light color scheme
 Plugin 'nelstrom/vim-mac-classic-theme'
-
-" vim powerline -  The ultimate vim statusline utility
-Plugin 'Lokaltog/vim-powerline'
 
 " makes the command line behave like emacs
 Plugin 'houtsnip/vim-emacscommandline'
@@ -445,9 +440,6 @@ let g:JSLintHighlightErrorLine = 0
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
 "map quick quit
 map <leader>qq :qa!<cr>
 
@@ -563,20 +555,6 @@ function! QuitWithQ()
 endfunction
 autocmd FileType help exe QuitWithQ()
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Powerline configuration, you'll need a powerline patched font.
-" You should probably use inconsolata-g (included in fonts directory)
-"
-" If not, you can patch your own.
-" See: https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher
-" You'll probably need this too: https://github.com/jenius/Fontforge-Installer
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_stl_path_style = 'relative'
-" call Pl#Theme#RemoveSegment('fugitive:branch')
-call Pl#Theme#RemoveSegment('fileformat')
-call Pl#Theme#RemoveSegment('fileencoding')
-call Pl#Theme#RemoveSegment('scrollpercent')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This enables iterm cursor changes from vim. In .tmux.conf you'll need:
