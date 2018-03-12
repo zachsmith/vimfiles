@@ -199,6 +199,9 @@ Plugin 'tpope/vim-rails'
 " Improved javascript indentation
 Plugin 'pangloss/vim-javascript'
 
+" React/JSX syntax
+Plugin 'mxw/vim-jsx'
+
 " Vim Git runtime files
 Plugin 'tpope/vim-git'
 
