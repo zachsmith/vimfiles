@@ -424,6 +424,7 @@ au BufNewFile,BufRead *.jst.ejs set ft=jst
 au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 au FileType markdown setlocal spell spelllang=en_us textwidth=79 colorcolumn=80
+set nofoldenable    " disable folding
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
